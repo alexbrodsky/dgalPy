@@ -337,5 +337,7 @@ def max(p):
 #
 def train(model,input,metrics,trainingSeq, pairwisePenalty,penalty,options):
     return "tbd"
+def calibrate(model, lossfunction, input, output):
+    return "tbd"
 #
 #-----------------------------------------------------------------------------

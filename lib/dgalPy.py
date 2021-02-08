@@ -45,17 +45,32 @@ def merge(dictSeq):
     return merged
 #--------------------------------------------------------------
 '''
+- value: a list of pyomo atomic constraint
+- methods: constructor w/ a seq;  constructor w/nothing - for empty seq
+
+
+'''
+class dgPyomoConstraint:
+    def __init__(self,seq):
+        self.constraint = seq
+    def __init__(self):
+        self.constraint = list()
+    def atomicSeq():
+        returns seq
+
+
+'''
 constraintSeq is a (possibly empty) list of elements, each being either
 - bool
 - pyomo atomic constraint or
-- sequence of pyomo atomic constraints
+-  dgPyomoConstraint
 The function returns either bool (True or False) or
-a non-empty (flat) sequence of pyomo atomic constraints
+a dgPyomoConstraint
 '''
 def all(constraintSeq):
 #    debug("constraintSeq", constraintSeq)
     # pdb.set_trace()
-    constraint = []
+    seq = []
 #    debug("emptyConstraintList", constraint)
     for c in constraintSeq:
 #        debug("constraintList_beg_of_iteration", constraint)
@@ -68,18 +83,15 @@ def all(constraintSeq):
 #                debug("c_if_false", c)
                 return False
             else: print("dgal.all: bool type error")
-        elif type(c) == list:  # i.e., it is flat seq of Pyomo constraints
-                c1 = all(c)
-                if type(c1) == bool:
-                    if c1 == True: pass
-                elif c1 == False: return False
-                else: constraint.extend(c1)
+        elif isinstance(c, dgPyomoConstraint): # i.e., it is flat seq of Pyomo constraints
+            seq.extend(c.atomicSeq())
         else:  # i.e., it is a pyomo atomic constraint
-            constraint.append(c)
+            seq.append(c)
 #        debug("constraintList_end_of_iteration", constraint)
 #    debug("constraintList_after_loop", constraint)
-    if constraint == []: return True
-    else: return constraint
+#   not constaint is either [] or a a list of atomic pyomo constraints
+    if seq == []: return True
+    else: return dgPyomoConstraint(seq)
 
 # tbd note: find out how to override Python all, any, and, or operators
 #--------------------------------------------------------------------------

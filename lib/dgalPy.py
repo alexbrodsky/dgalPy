@@ -1,3 +1,11 @@
+import pdb
+import copy
+import json
+import pyomo.environ as pyo
+from pyomo.environ import *
+from pyomo.opt import SolverFactory
+from pyomo.opt import SolverStatus, TerminationCondition
+
 '''
 extentions TBD:
 ---------------
@@ -10,13 +18,7 @@ extentions TBD:
 
 
 '''
-import pdb
-import copy
-import json
-import pyomo.environ as pyo
-from pyomo.environ import *
-from pyomo.opt import SolverFactory
-from pyomo.opt import SolverStatus, TerminationCondition
+
 
 #import logging
 #logging.basicConfig(filename= "dgalDebug.log", level=logging.DEBUG)

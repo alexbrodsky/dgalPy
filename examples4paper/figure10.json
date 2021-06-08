@@ -1,0 +1,79 @@
+{
+  "demand": [
+    {
+      "item": 1,
+      "demQty": 100
+    },
+    {
+      "item": 2,
+      "demQty": 500
+    },
+    {
+      "item": 3,
+      "demQty": 130
+    },
+    {
+      "item": 4,
+      "demQty": 50
+    }
+  ],
+  "purchase": [
+    {
+      "sup": 15,
+      "volumeDiscOver": 200,
+      "volumeDiscRate": 0.05,
+      "items": [
+        {
+          "item": 1,
+          "ppu": 2,
+          "availQty": 70,
+          "qty": 150
+        },
+        {
+          "item": 2,
+          "ppu": 7.5,
+          "availQty": 2000,
+          "qty": 100
+        }
+      ]
+    },
+    {
+      "sup": 17,
+      "volumeDiscOver": 100,
+      "volumeDiscRate": 0.1,
+      "items": [
+        {
+          "item": 1,
+          "ppu": 3.8,
+          "availQty": 2500,
+          "qty": 10
+        },
+        {
+          "item": 3,
+          "ppu": 3.5,
+          "availQty": 5000,
+          "qty": 130
+        },
+        {
+          "item": 4,
+          "ppu": 3.5,
+          "availQty": 50,
+          "qty": 200
+        }
+      ]
+    },
+    {
+      "sup": 19,
+      "volumeDiscOver": 200,
+      "volumeDiscRate": 0.15,
+      "items": [
+        {
+          "item": 2,
+          "ppu": 6.8,
+          "availQty": 1000,
+          "qty": 35
+        }
+      ]
+    }
+  ]
+}

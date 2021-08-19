@@ -1,0 +1,68 @@
+{ "data": 
+    [
+        {   "id": "mySupplyChain",
+            "type": "composite",
+            "input": [],
+            "output": ["prod1", "prod2"],
+            "inputQty": { },
+            "outputQty": { "prod1": 50, "prod2": 100 },
+            "subProcesses": [ "combinedSupply", "combinedManuf" ]
+        },
+        {   "id": "combinedSupply",
+            "type": "composite",
+            "input": [],
+            "output": ["mat1","mat2"],
+            "inputQty": { },
+            "outputQty": { "mat1": 500, "mat2": 200 },
+            "subProcesses": [ "supp1", "supp2" ]
+        },
+        {   "id": "combinedManuf",
+            "type": "composite",
+            "input": ["mat1","mat2"],
+            "output": ["prod1","prod2"],
+            "inputQty": { "mat1": 500, "mat2": 200 },
+            "outputQty": { "prod1": 50, "prod2": 100 },
+            "subProcesses": [ "tier1manuf", "tier2manuf" ]
+        },
+        {   "id": "supp1",
+            "type": "supplier",
+            "input": [],
+            "output": ["mat1","mat2"],
+            "inputQty": { },
+            "outputQty": { "mat1": 10, "mat2": 20 },
+            "ppu": {"mat1": 5.0, "mat2": 3.0 } 
+        },
+        {   "id": "supp2",
+            "type": "supplier",
+            "input": [],
+            "output": ["mat1","mat2"],
+            "inputQty": { },
+            "outputQty": { "mat1": 20, "mat2": 5 },
+            "ppu": {"mat1": 4.0, "mat2": 5.0 }
+        },
+        {   "id": "tier1manuf", 
+            "type": "manufacturer",
+            "input": ["mat1","mat2"],
+            "output": ["part1","part2"],
+            "outputQty": { "part1": 40, "part2": 60 },
+            "inQtyPer1out": [ 
+                { "key": {"out":"part1", "in":"mat1"}, "qty": 2 }, 
+                { "key": {"out": "part1", "in": "mat2"}, "qty": 1 }, 
+                { "key": {"out": "part2", "in": "mat2"}, "qty": 3 } 
+            ],
+            "manufCostPerUnit": [ { "part1": 30.0}, {"part2": 20.0} ]
+        },
+        {   "id": "tier12manuf",
+            "type": "manufacturer",
+            "input": ["part1","part2"],
+            "output": ["prod1","prod2"],
+            "outputQty": { "prod1": 30, "prod2": 70 },
+            "inQtyPer1out": [ 
+                { "key": {"out": "prod1", "in": "part1"}, "qty": 2 }, 
+                { "key": {"out": "prod1", "in": "part2"}, "qty": 1 }, 
+                { "key": {"out": "prod2", "in": "part2"}, "qty": 3 } 
+            ],
+            "manufCostPerUnit": [ { "part1": 30.0}, {"part2": 20.0} ]
+        }
+    ]
+}

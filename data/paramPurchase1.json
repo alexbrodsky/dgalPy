@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "sup": 15,
+      "volumeDiscOver": "float ...",
+      "volumeDiscRate": "float ...",
+      "items": [
+        {
+          "item": 1,
+          "ppu": 2,
+          "availQty": 70,
+          "qty": "int ?"
+        },
+        {
+          "item": 2,
+          "ppu": 7.5,
+          "availQty": 2000,
+          "qty": "int ?"
+        }
+      ]
+    },
+    {
+      "sup": 17,
+      "volumeDiscOver": "float ...",
+      "volumeDiscRate": "float ...",
+      "items": [
+        {
+          "item": 1,
+          "ppu": 3.8,
+          "availQty": 2500,
+          "qty": "int ?"
+        },
+        {
+          "item": 3,
+          "ppu": 3.5,
+          "availQty": 5000,
+          "qty": "int ?"
+        },
+        {
+          "item": 4,
+          "ppu": 3.5,
+          "availQty": 50,
+          "qty": "int ?"
+        }
+      ]
+    },
+    {
+      "sup": 19,
+      "volumeDiscOver": "float ...",
+      "volumeDiscRate": "float ...",
+      "items": [
+        {
+          "item": 2,
+          "ppu": 6.8,
+          "availQty": 1000,
+          "qty": "int ?"
+        }
+      ]
+    }
+  ]
+}

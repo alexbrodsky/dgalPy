@@ -1,0 +1,15 @@
+ {"data": [
+    {supplier : "s1",   
+     itemPrices : [ {item :  "i1", ppu: 1.0 }, 
+                    {item : "i2", ppu: 2.9}, {item :  "i3", ppu: 4.5}] ,
+     volumeDiscOver : 200.0,  
+     volumeDiscRate : 0.05
+     },
+    {supplier :  "s2",  
+     itemPrices: [ {item : "i1", ppu: 2.0},  
+                   {item : "i2", ppu: 3.2},  {item : "i3", ppu:  4.3} ],
+     volumeDiscOver : 100.0,  
+     volumeDiscRate : 0.2                        
+    }
+    ]
+    }

@@ -1,0 +1,178 @@
+{
+  "input": {
+    "demand": [
+      {
+        "item": 1,
+        "demQty": 100
+      },
+      {
+        "item": 2,
+        "demQty": 500
+      },
+      {
+        "item": 3,
+        "demQty": 130
+      },
+      {
+        "item": 4,
+        "demQty": 50
+      }
+    ],
+    "purchase": [
+      {
+        "sup": 15,
+        "volumeDiscOver": {
+          "dgalType": "floatPar"
+        },
+        "volumeDiscRate": {
+          "dgalType": "floatPar"
+        },
+        "items": [
+          {
+            "item": 1,
+            "ppu": 2,
+            "availQty": 70,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                9
+              ]
+            },
+            "values": [
+              10,
+              4,
+              7,
+              1,
+              91
+            ]
+          },
+          {
+            "item": 2,
+            "ppu": 7.5,
+            "availQty": 2000,
+            "qty": {
+              "dgalType": "int ?",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                91
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "sup": 17,
+        "volumeDiscOver": {
+          "dgalType": "floatPar"
+        },
+        "volumeDiscRate": {
+          "dgalType": "floatPar"
+        },
+        "items": [
+          {
+            "item": 1,
+            "ppu": 3.8,
+            "availQty": 2500,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                91
+              ]
+            }
+          },
+          {
+            "item": 3,
+            "ppu": 3.5,
+            "availQty": 5000,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                91
+              ]
+            }
+          },
+          {
+            "item": 4,
+            "ppu": 3.5,
+            "availQty": 50,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                91
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "sup": 19,
+        "volumeDiscOver": {
+          "dgalType": "floatPar"
+        },
+        "volumeDiscRate": {
+          "dgalType": "floatPar"
+        },
+        "items": [
+          {
+            "item": 2,
+            "ppu": 6.8,
+            "availQty": 1000,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                9
+              ]
+            }
+          },
+          {
+            "item": 2,
+            "ppu": 6.8,
+            "availQty": 1000,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                9
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "output": {"orderCost": {"dgalType": "floatComp",
+                            "values": [2500, 1000, 50.2, 405, 3000]
+  },
+              "demandSatisfied": {"dgalType": "bootComp",
+                                  "values": [true, true, false, true, true]
+              },
+              "supplyAvailability": {"dgalType": "boolComp", "value": [true, true, false, true, true]},
+              "constraints": {"dgalType": "boolComp", "values": [true, true, false, true, true]}
+  }
+}

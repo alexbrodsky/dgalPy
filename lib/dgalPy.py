@@ -367,3 +367,7 @@ def train(model, input, metrics, trainingSeq, pairwisePenalty, penalty, options)
     return "tbd"
 #
 # -----------------------------------------------------------------------------
+
+
+def calibrate(model, input, loss_function, minMax, obj, constraints:
+    ...

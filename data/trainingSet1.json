@@ -1,62 +1,55 @@
 {
-  "input": {
-    "demand": [
+  "input" : {
+    "demand" : [
       {
-        "item": 1,
-        "demQty": 100
+        "item" : 1,
+        "demQty" : 100
       },
       {
-        "item": 2,
-        "demQty": 500
+        "item" : 2,
+        "demQty" : 500
       },
       {
-        "item": 3,
-        "demQty": 130
+        "item" : 3,
+        "demQty" : 130
       },
       {
-        "item": 4,
-        "demQty": 50
+        "item" : 4,
+        "demQty" : 50
       }
     ],
-    "purchase": [
+    "purchase" : [
       {
-        "sup": 15,
-        "volumeDiscOver": {
-          "dgalType": "floatPar"
+        "sup" : 15,
+        "volumeDiscOver" : {
+          "dgalType" : "floatPar"
         },
-        "volumeDiscRate": {
-          "dgalType": "floatPar"
+        "volumeDiscRate" : {
+          "dgalType" : "floatPar"
         },
-        "items": [
+        "items" : [
           {
-            "item": 1,
-            "ppu": 2,
-            "availQty": 70,
-            "qty": {
-              "dgalType": "intVar",
-              "values": [
+            "item" : 1,
+            "ppu" : 2,
+            "availQty" : 70,
+            "qty" : {
+              "dgalType" : "intVar",
+              "values" : [
                 10,
                 4,
                 7,
                 1,
                 9
               ]
-            },
-            "values": [
-              10,
-              4,
-              7,
-              1,
-              9
-            ]
+            }
           },
           {
-            "item": 2,
-            "ppu": 7.5,
-            "availQty": 2000,
-            "qty": {
-              "dgalType": "int ?",
-              "values": [
+            "item" : 2,
+            "ppu" : 7.5,
+            "availQty" : 2000,
+            "qty" : {
+              "dgalType" : "int ?",
+              "values" : [
                 10,
                 4,
                 7,
@@ -68,21 +61,21 @@
         ]
       },
       {
-        "sup": 17,
-        "volumeDiscOver": {
-          "dgalType": "floatPar"
+        "sup" : 17,
+        "volumeDiscOver" : {
+          "dgalType" : "floatPar"
         },
-        "volumeDiscRate": {
-          "dgalType": "floatPar"
+        "volumeDiscRate" : {
+          "dgalType" : "floatPar"
         },
-        "items": [
+        "items" : [
           {
-            "item": 1,
-            "ppu": 3.8,
-            "availQty": 2500,
-            "qty": {
-              "dgalType": "intVar",
-              "values": [
+            "item" : 1,
+            "ppu" : 3.8,
+            "availQty" : 2500,
+            "qty" : {
+              "dgalType" : "intVar",
+              "values" : [
                 10,
                 4,
                 7,
@@ -92,12 +85,12 @@
             }
           },
           {
-            "item": 3,
-            "ppu": 3.5,
-            "availQty": 5000,
-            "qty": {
-              "dgalType": "intVar",
-              "values": [
+            "item" : 3,
+            "ppu" : 3.5,
+            "availQty" : 5000,
+            "qty" : {
+              "dgalType" : "intVar",
+              "values" : [
                 10,
                 4,
                 7,
@@ -107,12 +100,12 @@
             }
           },
           {
-            "item": 4,
-            "ppu": 3.5,
-            "availQty": 50,
-            "qty": {
-              "dgalType": "intVar",
-              "values": [
+            "item" : 4,
+            "ppu" : 3.5,
+            "availQty" : 50,
+            "qty" : {
+              "dgalType" : "intVar",
+              "values" : [
                 10,
                 4,
                 7,
@@ -124,21 +117,21 @@
         ]
       },
       {
-        "sup": 19,
-        "volumeDiscOver": {
-          "dgalType": "floatPar"
+        "sup" : 19,
+        "volumeDiscOver" : {
+          "dgalType" : "floatPar"
         },
-        "volumeDiscRate": {
-          "dgalType": "floatPar"
+        "volumeDiscRate" : {
+          "dgalType" : "floatPar"
         },
-        "items": [
+        "items" : [
           {
-            "item": 2,
-            "ppu": 6.8,
-            "availQty": 1000,
-            "qty": {
-              "dgalType": "intVar",
-              "values": [
+            "item" : 2,
+            "ppu" : 6.8,
+            "availQty" : 1000,
+            "qty" : {
+              "dgalType" : "intVar",
+              "values" : [
                 10,
                 4,
                 7,
@@ -151,10 +144,10 @@
       }
     ]
   },
-  "output": {
-    "orderCost": {
-      "dgalType": "floatComp",
-      "values": [
+  "output" : {
+    "orderCost" : {
+      "dgalType" : "floatComp",
+      "values" : [
         2500,
         1000.5,
         50.2,
@@ -162,9 +155,9 @@
         3000
       ]
     },
-    "demandSatisfied": {
-      "dgalType": "boolComp",
-      "values": [
+    "demandSatisfied" : {
+      "dgalType" : "boolComp",
+      "values" : [
         true,
         true,
         false,
@@ -172,9 +165,9 @@
         true
       ]
     },
-    "supplyAvailability": {
-      "dgalType": "boolComp",
-      "values": [
+    "supplyAvailability" : {
+      "dgalType" : "boolComp",
+      "values" : [
         true,
         true,
         false,
@@ -182,9 +175,9 @@
         true
       ]
     },
-    "constraints": {
-      "dgalType": "boolComp",
-      "values": [
+    "constraints" : {
+      "dgalType" : "boolComp",
+      "values" : [
         true,
         true,
         false,

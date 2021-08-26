@@ -1,194 +1,196 @@
 {
-  "data" : [
-    {
-      "id" : "mySupplyChain",
-      "type" : "composite",
-      "input" : [],
-      "output" : [
-        "prod1",
-        "prod2"
-      ],
-      "inputQty" : {},
-      "outputQty" : {
-        "prod1" : 50,
-        "prod2" : 100
+  "input": {
+    "demand": [
+      {
+        "item": 1,
+        "demQty": 100
       },
-      "subProcesses" : [
-        "combinedSupply",
-        "combinedManuf"
-      ]
-    },
-    {
-      "id" : "combinedSupply",
-      "type" : "composite",
-      "input" : [],
-      "output" : [
-        "mat1",
-        "mat2"
-      ],
-      "inputQty" : {},
-      "outputQty" : {
-        "mat1" : 500,
-        "mat2" : 200
+      {
+        "item": 2,
+        "demQty": 500
       },
-      "subProcesses" : [
-        "supp1",
-        "supp2"
-      ]
-    },
-    {
-      "id" : "combinedManuf",
-      "type" : "composite",
-      "input" : [
-        "mat1",
-        "mat2"
-      ],
-      "output" : [
-        "prod1",
-        "prod2"
-      ],
-      "inputQty" : {
-        "mat1" : 500,
-        "mat2" : 200
+      {
+        "item": 3,
+        "demQty": 130
       },
-      "outputQty" : {
-        "prod1" : 50,
-        "prod2" : 100
-      },
-      "subProcesses" : [
-        "tier1manuf",
-        "tier2manuf"
-      ]
-    },
-    {
-      "id" : "supp1",
-      "type" : "supplier",
-      "input" : [],
-      "output" : [
-        "mat1",
-        "mat2"
-      ],
-      "inputQty" : {},
-      "outputQty" : {
-        "mat1" : 10,
-        "mat2" : 20
-      },
-      "ppu" : {
-        "mat1" : 5,
-        "mat2" : 3
+      {
+        "item": 4,
+        "demQty": 50
       }
-    },
-    {
-      "id" : "supp2",
-      "type" : "supplier",
-      "input" : [],
-      "output" : [
-        "mat1",
-        "mat2"
-      ],
-      "inputQty" : {},
-      "outputQty" : {
-        "mat1" : 20,
-        "mat2" : 5
+    ],
+    "purchase": [
+      {
+        "sup": 15,
+        "volumeDiscOver": {
+          "dgalType": "floatPar"
+        },
+        "volumeDiscRate": {
+          "dgalType": "floatPar"
+        },
+        "items": [
+          {
+            "item": 1,
+            "ppu": 2,
+            "availQty": 70,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                9
+              ]
+            },
+            "values": [
+              10,
+              4,
+              7,
+              1,
+              9
+            ]
+          },
+          {
+            "item": 2,
+            "ppu": 7.5,
+            "availQty": 2000,
+            "qty": {
+              "dgalType": "int ?",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                9
+              ]
+            }
+          }
+        ]
       },
-      "ppu" : {
-        "mat1" : 4,
-        "mat2" : 5
+      {
+        "sup": 17,
+        "volumeDiscOver": {
+          "dgalType": "floatPar"
+        },
+        "volumeDiscRate": {
+          "dgalType": "floatPar"
+        },
+        "items": [
+          {
+            "item": 1,
+            "ppu": 3.8,
+            "availQty": 2500,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                9
+              ]
+            }
+          },
+          {
+            "item": 3,
+            "ppu": 3.5,
+            "availQty": 5000,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                9
+              ]
+            }
+          },
+          {
+            "item": 4,
+            "ppu": 3.5,
+            "availQty": 50,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                9
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "sup": 19,
+        "volumeDiscOver": {
+          "dgalType": "floatPar"
+        },
+        "volumeDiscRate": {
+          "dgalType": "floatPar"
+        },
+        "items": [
+          {
+            "item": 2,
+            "ppu": 6.8,
+            "availQty": 1000,
+            "qty": {
+              "dgalType": "intVar",
+              "values": [
+                10,
+                4,
+                7,
+                1,
+                9
+              ]
+            }
+          }
+        ]
       }
-    },
-    {
-      "id" : "tier1manuf",
-      "type" : "manufacturer",
-      "input" : [
-        "mat1",
-        "mat2"
-      ],
-      "output" : [
-        "part1",
-        "part2"
-      ],
-      "outputQty" : {
-        "part1" : 40,
-        "part2" : 60
-      },
-      "inQtyPer1out" : [
-        {
-          "key" : {
-            "out" : "part1",
-            "in" : "mat1"
-          },
-          "qty" : 2
-        },
-        {
-          "key" : {
-            "out" : "part1",
-            "in" : "mat2"
-          },
-          "qty" : 1
-        },
-        {
-          "key" : {
-            "out" : "part2",
-            "in" : "mat2"
-          },
-          "qty" : 3
-        }
-      ],
-      "manufCostPerUnit" : [
-        {
-          "part1" : 30
-        },
-        {
-          "part2" : 20
-        }
+    ]
+  },
+  "output": {
+    "orderCost": {
+      "dgalType": "floatComp",
+      "values": [
+        2500,
+        1000.5,
+        50.2,
+        405,
+        3000
       ]
     },
-    {
-      "id" : "tier12manuf",
-      "type" : "manufacturer",
-      "input" : [
-        "part1",
-        "part2"
-      ],
-      "output" : [
-        "prod1",
-        "prod2"
-      ],
-      "outputQty" : {
-        "prod1" : 30,
-        "prod2" : 70
-      },
-      "inQtyPer1out" : [
-        {
-          "key" : {
-            "out" : "prod1",
-            "in" : "part1"
-          },
-          "qty" : 2
-        },
-        {
-          "key" : {
-            "out" : "prod1",
-            "in" : "part2"
-          },
-          "qty" : 1
-        },
-        {
-          "key" : {
-            "out" : "prod2",
-            "in" : "part2"
-          },
-          "qty" : 3
-        }
-      ],
-      "manufCostPerUnit" : [
-        {
-          "part1" : 30
-        },
-        {
-          "part2" : 20
-        }
+    "demandSatisfied": {
+      "dgalType": "boolComp",
+      "values": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ]
+    },
+    "supplyAvailability": {
+      "dgalType": "boolComp",
+      "values": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ]
+    },
+    "constraints": {
+      "dgalType": "boolComp",
+      "values": [
+        true,
+        true,
+        false,
+        true,
+        true
       ]
     }
-  ]
+  }
 }

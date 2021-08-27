@@ -369,5 +369,5 @@ def train(model, input, metrics, trainingSeq, pairwisePenalty, penalty, options)
 # -----------------------------------------------------------------------------
 
 
-def calibrate(model, input, loss_function, minMax, obj, constraints:
+def calibrate(model, loss_function, training_data):
     ...
